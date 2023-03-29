@@ -2,14 +2,16 @@ const divRow = document.getElementById("books");
 
 let myLibrary = [
     {
-        "Title": "Der Marsianer",
+        "title": "Der Marsianer",
         "author": "Andy Weir",
         "pages": "381"
     },
 ];
 
-function Book() {
-
+function Book(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
 };
 
 function addBookToLibrary() {
@@ -23,7 +25,7 @@ function addBookToLibrary() {
         divCardHeader.className = "card-header";
         const cardTitle = document.createElement("h3");
         cardTitle.className = "card-title mx-auto";
-        cardTitle.innerText = myLibrary[i].Title;
+        cardTitle.innerText = myLibrary[i].title;
         const divCardBody = document.createElement("div");
         divCardBody.className = "card-body";
         const titleAuthor = document.createElement("h3");
@@ -46,7 +48,7 @@ function addBookToLibrary() {
         spanForm.innerText = "read/unread";
         const deleteButton = document.createElement("button");
         deleteButton.className = "btn";
-        deleteButton.innerText = "Delete"
+        deleteButton.innerText = "Delete";
 
 
         divRow.append(divCol);
