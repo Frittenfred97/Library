@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <script src="app.js" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"defer></script>
+    <script src="app.js" async="false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" async="false"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.1.5/tilt.jquery.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.1.5/tilt.jquery.js" async="false"></script>
     <link rel="icon" href="/images/favicon.svg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-flags.min.css">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="overflow-auto">
-    <div class="page">
+    <div id="theme" class="page">
         <header>
             <nav class="navbar navbar-expand navbar-light">
                 <div class="container-fluid">
@@ -26,19 +26,24 @@
                         <img src="images/bookshelf.svg" style="height: 3rem; width: 3rem;" alt="Library">
                         <span class="h1">Library</span>
                     </a>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M12 5l0 14"></path>
-                        <path d="M5 12l14 0"></path>
-                      </svg>
-                        Add book
-                      </button>
+                    <div id="">
+                      <a class="icon-link" href="">
+                        <img src="images/moon-filled.svg" onclick="getGood()" id="planets" alt="">
+                      </a>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M12 5l0 14"></path>
+                          <path d="M5 12l14 0"></path>
+                        </svg>
+                          Add book
+                        </button>
+                    </div>
                 </div>
             </nav>
         </header>
         <div class="container">
-            <div class="row row-cols-1 row-cols-md-3 g-4 mt-2" id="books">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-2" id="books">
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 const divRow = document.getElementById("books");
+let bookLoop = 0;
 
 let myLibrary = [
     {
@@ -14,12 +15,11 @@ function Book(title, author, pages, informations) {
     this.author = author;
     this.pages = pages;
     this.informations = informations;
-
-    Book.push
 };
 
 function addBookToLibrary() {
-    for (let i = 0; i < myLibrary.length; i++) {
+
+    for (;bookLoop < myLibrary.length; bookLoop++) {
 
         const divCol = document.createElement("div");
         divCol.className = "col-auto";
@@ -30,22 +30,22 @@ function addBookToLibrary() {
         divCardHeader.className = "card-header";
         const cardTitle = document.createElement("h3");
         cardTitle.className = "card-title mx-auto";
-        cardTitle.innerText = myLibrary[i].title;
+        cardTitle.innerText = myLibrary[bookLoop].title;
         const divCardBody = document.createElement("div");
         divCardBody.className = "card-body";
         const titleAuthor = document.createElement("h3");
         titleAuthor.innerText = "Author:";
         const bookAuthor = document.createElement("p");
-        bookAuthor.innerText = myLibrary[i].author;
+        bookAuthor.innerText = myLibrary[bookLoop].author;
         const titleNumbers = document.createElement("h3");
         titleNumbers.innerText = "Page numbers:";
         const pageNumbers = document.createElement("p");
-        pageNumbers.innerText = myLibrary[i].pages;
+        pageNumbers.innerText = myLibrary[bookLoop].pages;
         const titleInformations = document.createElement("h3");
         titleInformations.innerText = "Additional information:" 
         const bookInformations = document.createElement("p");
         bookInformations.className = "text-muted";
-        bookInformations.innerText = myLibrary[i].informations;
+        bookInformations.innerText = myLibrary[bookLoop].informations;
         const divCardFooter = document.createElement("div");
         divCardFooter.className = "card-footer d-flex align-items-center justify-content-between";
         const labelForm = document.createElement("label");
@@ -88,9 +88,9 @@ function getFormValues() {
     const getNumber = document.getElementById("number").value;
     const getInformation = document.getElementById("information").value;
 
-    Book(getTitle, getAuthor, getNumber, getInformation);
+    let getBook = new Book(getTitle, getAuthor, getNumber, getInformation);
 
-    myLibrary.push(Book);
+    myLibrary.push(getBook);
 
     console.log(getTitle);
     console.log(getAuthor);
@@ -101,6 +101,22 @@ function getFormValues() {
     document.getElementById("author").value = "";
     document.getElementById("number").value = "";
     document.getElementById("information").value = "";
+
+    addBookToLibrary();
+
+}
+
+function getGood() {
+
+    let planets = document.getElementById("planets");
+    let theme = document.getElementById("theme");
+
+    if (theme.contains = "theme-dark-auto") {
+        planets.src = "images/sun-filled.svg";
+        theme.removeAttribute("theme-dark-auto");
+    } else {
+        planets.src = "images/moon-filled.svg"
+    }
 }
 
 addBookToLibrary();
