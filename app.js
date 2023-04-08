@@ -82,6 +82,10 @@ function addBookToLibrary() {
     }
 };
 
+function deleteFromLibrary() {
+
+};
+
 function getFormValues() {
     const getTitle = document.getElementById("title").value;
     const getAuthor = document.getElementById("author").value;
@@ -106,16 +110,19 @@ function getFormValues() {
 
 }
 
-function getGood() {
+function changeTheme() {
+
+    console.log("test");
 
     let planets = document.getElementById("planets");
     let theme = document.getElementById("theme");
 
-    if (theme.contains = "theme-dark-auto") {
-        planets.src = "images/sun-filled.svg";
-        theme.removeAttribute("theme-dark-auto");
+    if (theme.classList.contains("theme-dark-auto")) {
+        planets.src = "images/moon-filled.svg";
+        theme.className.remove = "theme-dark-auto";
     } else {
-        planets.src = "images/moon-filled.svg"
+        planets.src = "images/sun-filled.svg"
+        theme.className = "theme-dark-auto";
     }
 }
 
