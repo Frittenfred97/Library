@@ -83,7 +83,8 @@ function addBookToLibrary() {
 };
 
 function deleteFromLibrary() {
-
+    const divDeleteButton = document.getElementById("delete")
+    
 };
 
 function getFormValues() {
