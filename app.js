@@ -17,6 +17,7 @@ function Book(title, author, pages, informations) {
     this.informations = informations;
 };
 
+
 function addBookToLibrary() {
 
     for (;bookLoop < myLibrary.length; bookLoop++) {
@@ -57,9 +58,15 @@ function addBookToLibrary() {
         spanForm.className = "form-check-label"
         spanForm.innerText = "unread/read";
         const deleteButton = document.createElement("button");
+        deleteButton.id = "deleteCard";
         deleteButton.className = "btn btn-danger";
         const deleteImage = document.createElement("img");
         deleteImage.src = "images/trash-x.svg"
+
+        deleteButton.addEventListener("click", function() {
+            const cardElement = this.parentElement.parentElement.parentElement;
+            cardElement.remove();
+        });
 
 
         divRow.append(divCol);
@@ -82,10 +89,6 @@ function addBookToLibrary() {
     }
 };
 
-function deleteFromLibrary() {
-
-};
-
 function getFormValues() {
     const getTitle = document.getElementById("title").value;
     const getAuthor = document.getElementById("author").value;
@@ -95,11 +98,6 @@ function getFormValues() {
     let getBook = new Book(getTitle, getAuthor, getNumber, getInformation);
 
     myLibrary.push(getBook);
-
-    console.log(getTitle);
-    console.log(getAuthor);
-    console.log(getNumber);
-    console.log(getInformation);
 
     document.getElementById("title").value = "";
     document.getElementById("author").value = "";
