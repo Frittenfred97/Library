@@ -17,7 +17,6 @@ function Book(title, author, pages, informations) {
     this.informations = informations;
 };
 
-
 function addBookToLibrary() {
 
     for (;bookLoop < myLibrary.length; bookLoop++) {
@@ -68,7 +67,6 @@ function addBookToLibrary() {
             cardElement.remove();
         });
 
-
         divRow.append(divCol);
         divCol.append(divCard);
         divCard.append(divCardHeader);
@@ -87,6 +85,9 @@ function addBookToLibrary() {
         divCardFooter.append(deleteButton);
         deleteButton.append(deleteImage);
     }
+
+    document.body.appendChild(document.createElement('script')).src = 'js/vanilla-tilt.min.js';
+
 };
 
 function getFormValues() {
@@ -107,7 +108,6 @@ function getFormValues() {
     addBookToLibrary();
 
 }
-
 
 function changeTheme() {
 
