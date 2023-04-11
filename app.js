@@ -110,19 +110,18 @@ function getFormValues() {
 
 }
 
-function changeTheme() {
 
-    console.log("test");
+function changeTheme() {
 
     let planets = document.getElementById("planets");
     let theme = document.getElementById("theme");
 
     if (theme.classList.contains("theme-dark-auto")) {
         planets.src = "images/moon-filled.svg";
-        theme.className.remove = "theme-dark-auto";
+        theme.classList.remove("theme-dark-auto");
     } else {
         planets.src = "images/sun-filled.svg"
-        theme.className = "theme-dark-auto";
+        theme.className = "theme-dark-auto overflow-auto";
     }
 }
 
